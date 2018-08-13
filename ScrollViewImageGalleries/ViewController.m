@@ -73,6 +73,7 @@
     self.pageControl.numberOfPages = 3;
     self.pageControl.currentPage = 0;
     [self.view bringSubviewToFront:self.pageControl];
+    
 }
 
 
@@ -110,6 +111,13 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     int pageIndex = round(self.scrollView.contentOffset.x/self.view.frame.size.width);
     self.pageControl.currentPage = pageIndex;
+}
+- (IBAction)changePage:(UIPageControl *)sender {
+    NSInteger page = sender.currentPage;
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
 }
 
 @end
