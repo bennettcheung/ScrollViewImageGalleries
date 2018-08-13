@@ -27,10 +27,10 @@
     
     self.imageViews = [[NSMutableArray alloc]init];
     
-    for (int i=0; i > [self.imageNames count]; i++)
+    for (int i=0; i < [self.imageNames count]; i++)
     {
         UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.imageNames[i]]];
-        [imageView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [imageView setFrame:CGRectMake(self.view.frame.size.width * i, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [imageView setUserInteractionEnabled:YES];
         
         UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(launchDetailImageView:)];
