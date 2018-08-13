@@ -10,4 +10,5 @@
 
 @interface ImageDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSString* imageName;
 @end

@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+
 @end
 
 @implementation ImageDetailViewController
@@ -21,6 +22,7 @@
     // Do any additional setup after loading the view.
     [self.scrollView setMinimumZoomScale:1];
     [self.scrollView setMinimumZoomScale:3];
+    [self.imageView setImage:[UIImage imageNamed:self.imageName]];
     [self.imageView sizeToFit];
 }
 
