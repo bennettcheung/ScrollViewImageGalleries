@@ -15,6 +15,7 @@
 		9179178C21220000008ED14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9179178B21220000008ED14A /* main.m */; };
 		9179179621220000008ED14A /* ScrollViewImageGalleriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9179179521220000008ED14A /* ScrollViewImageGalleriesTests.m */; };
 		917917A121220000008ED14A /* ScrollViewImageGalleriesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 917917A021220000008ED14A /* ScrollViewImageGalleriesUITests.m */; };
+		917917B32122087C008ED14A /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 917917B22122087C008ED14A /* ImageDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9179179C21220000008ED14A /* ScrollViewImageGalleriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollViewImageGalleriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		917917A021220000008ED14A /* ScrollViewImageGalleriesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewImageGalleriesUITests.m; sourceTree = "<group>"; };
 		917917A221220000008ED14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917917B12122087C008ED14A /* ImageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
+		917917B22122087C008ED14A /* ImageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		9179177B2121FFFE008ED14A /* ScrollViewImageGalleries */ = {
 			isa = PBXGroup;
 			children = (
+				917917B12122087C008ED14A /* ImageDetailViewController.h */,
+				917917B22122087C008ED14A /* ImageDetailViewController.m */,
 				9179177C2121FFFE008ED14A /* AppDelegate.h */,
 				9179177D2121FFFE008ED14A /* AppDelegate.m */,
 				9179177F2121FFFE008ED14A /* ViewController.h */,
@@ -265,6 +270,7 @@
 				917917812121FFFE008ED14A /* ViewController.m in Sources */,
 				9179178C21220000008ED14A /* main.m in Sources */,
 				9179177E2121FFFE008ED14A /* AppDelegate.m in Sources */,
+				917917B32122087C008ED14A /* ImageDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
