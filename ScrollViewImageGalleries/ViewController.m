@@ -38,14 +38,14 @@
     [self.imageView1 addGestureRecognizer:gesture1];
     
     self.imageView2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.imageName2]];
-    [self.imageView2 setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.imageView2 setFrame:CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.imageView2 setUserInteractionEnabled:YES];
     
     UITapGestureRecognizer *gesture2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(launchDetailImageView:)];
     [self.imageView2 addGestureRecognizer:gesture2];
     
     self.imageView3 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.imageName3]];
-    [self.imageView3 setFrame:CGRectMake(0, self.view.frame.size.height*2, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.imageView3 setFrame:CGRectMake(self.view.frame.size.width * 2, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.imageView3 setUserInteractionEnabled:YES];
     UITapGestureRecognizer *gesture3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(launchDetailImageView:)];
     [self.imageView3 addGestureRecognizer:gesture3];
