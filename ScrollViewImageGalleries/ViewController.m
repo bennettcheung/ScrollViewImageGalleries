@@ -18,18 +18,18 @@
 @property (strong, nonatomic) NSString* imageName1;
 @property (strong, nonatomic) NSString* imageName2;
 @property (strong, nonatomic) NSString* imageName3;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)setupImageViews {
     self.imageName1 = @"Lighthouse";
     self.imageName2 = @"Lighthouse-night";
     self.imageName3 = @"Lighthouse-in-Field";
     // Do any additional setup after loading the view, typically from a nib.
-  
+    
     self.imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:self.imageName1]];
     [self.imageView1 setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.imageView1 setUserInteractionEnabled:YES];
@@ -49,12 +49,17 @@
     [self.imageView3 setUserInteractionEnabled:YES];
     UITapGestureRecognizer *gesture3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(launchDetailImageView:)];
     [self.imageView3 addGestureRecognizer:gesture3];
- 
-    CGFloat galleryWidth = self.imageView1.frame.size.width + self.imageView2.frame.size.width + self.imageView3.frame.size.width ;
-    CGFloat gallerHeight = self.imageView1.frame.size.height + self.imageView2.frame.size.height + self.imageView3.frame.size.height ;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    UIView *subView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, galleryWidth, gallerHeight)];
-    [subView setUserInteractionEnabled:YES];
+    [self setupImageViews];
+ 
+    CGFloat galleryWidth = self.imageView1.frame.size.width + self.imageView2.frame.size.width + self.imageView3.frame.size.width;
+    
+    UIView *subView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, galleryWidth, self.view.frame.size.height)];
+//    [subView setUserInteractionEnabled:YES];
     [subView addSubview:self.imageView1];
     [subView addSubview:self.imageView2];
     [subView addSubview:self.imageView3];
@@ -62,6 +67,12 @@
     
     [self.scrollView addSubview:subView];
     self.scrollView.contentSize = subView.frame.size;
+    [self.scrollView setPagingEnabled: YES];
+    
+    
+    self.pageControl.numberOfPages = 3;
+    self.pageControl.currentPage = 0;
+    [self.view bringSubviewToFront:self.pageControl];
 }
 
 
@@ -94,6 +105,11 @@
         ImageDetailViewController *imageDetailViewController = segue.destinationViewController;
         imageDetailViewController.imageName = sender;
     }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    int pageIndex = round(self.scrollView.contentOffset.x/self.view.frame.size.width);
+    self.pageControl.currentPage = pageIndex;
 }
 
 @end

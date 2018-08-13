@@ -20,10 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.scrollView setMinimumZoomScale:1];
-    [self.scrollView setMinimumZoomScale:3];
-    [self.imageView setImage:[UIImage imageNamed:self.imageName]];
+    [self.scrollView setMinimumZoomScale:0.1];
+    [self.scrollView setMinimumZoomScale:10];
+    
+    UIImage* image = [UIImage imageNamed:self.imageName];
+    [self.imageView setImage:image];
     [self.imageView sizeToFit];
+    self.scrollView.contentSize = image.size;
+    [self.scrollView setZoomScale:0.1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,4 +49,6 @@
     return self.imageView;
 }
 
+- (IBAction)pageControl:(UIPageControl *)sender {
+}
 @end
